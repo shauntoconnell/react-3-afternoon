@@ -20,7 +20,11 @@ export default class Edit extends Component {
   }
 
   updatePost() {
+    const {text} = this.state;  // why not off of props?  we passed 'text' in...
+    const {id, updatePostFn, hideEdit} = this.props;
 
+    updatePostFn(id, text)
+    hideEdit()
   }
 
   render() {
